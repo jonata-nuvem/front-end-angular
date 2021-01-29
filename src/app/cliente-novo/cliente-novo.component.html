@@ -1,0 +1,19 @@
+<h1>clientes</h1>
+
+<div>
+<form (ngSubmit)="save()">
+
+<label>Nome:
+    <input #nomeCliente [(ngModel)]="cliente.nome" name="nome"/>
+</label><br>
+
+<label>E-mail:
+    <input #emailCliente [(ngModel)]="cliente.email" name="email"/>
+</label><br>
+
+<label>CPF:
+    <input #cpfCliente [(ngModel)]="cliente.cpf" name="cpf"/>
+</label><br>
+<button type="submit">Salvar</button>
+</form>
+</div>

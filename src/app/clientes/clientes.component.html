@@ -1,4 +1,8 @@
 <h1>clientes</h1>
+
+<a routerLink="/novoCliente">NOVO CLIENTE</a>
+
+
 <ul class="clientes">
     <li *ngFor="let item of clientes">
         <a routerLink="/detalheCliente/{{item.id}}">

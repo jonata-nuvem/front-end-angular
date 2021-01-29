@@ -19,7 +19,7 @@ constructor(private ClienteService: ClienteService) { }
   }
 
 delete(cliente:Cliente):void{
-  //
+  this.ClienteService.deleteCliente(cliente).subscribe();
 }
 
 getClientes(): void{
