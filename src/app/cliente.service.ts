@@ -44,7 +44,7 @@ export class ClienteService {
   }
 
   /** GET cliente by id. Will 404 if id not found */
-  getCliente(id: number): Observable<Cliente> {
+  getCliente(id: string): Observable<Cliente> {
     const url = `${this.url}/${id}`;
     return this.http.get<Cliente>(url).pipe(
       tap(_ => this.log(`fetched cliente id=${id}`)),
@@ -89,7 +89,7 @@ export class ClienteService {
 
   /** PUT: update the cliente on the server */
   updateCliente(cliente: Cliente): Observable<any> {
-    return this.http.put(this.url, cliente, this.httpOptions).pipe(
+    return this.http.put(`${this.url}/update/${cliente.id}`, cliente, this.httpOptions).pipe(
       tap(_ => this.log(`updated cliente id=${cliente.id}`)),
       catchError(this.handleError<any>('updateCliente'))
     );

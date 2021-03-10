@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ClienteNovoComponent } from './cliente-novo/cliente-novo.component';
+import { ClienteAtualizarComponent } from './cliente-atualizar/cliente-atualizar.component';
 
 
 
@@ -16,7 +17,8 @@ import { ClienteNovoComponent } from './cliente-novo/cliente-novo.component';
   declarations: [
     AppComponent,
     ClientesComponent,
-    ClienteNovoComponent
+    ClienteNovoComponent,
+    ClienteAtualizarComponent
   ],
   imports: [
     BrowserModule,

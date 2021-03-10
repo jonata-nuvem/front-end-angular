@@ -1,15 +1,40 @@
-<h1>clientes</h1>
+<html>
+<style>
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
-<a routerLink="/novoCliente">NOVO CLIENTE</a>
+</style>
+<body>
+
+    <h1>Coleção Biológica</h1>
 
 
-<ul class="clientes">
-    <li *ngFor="let item of clientes">
-        <a routerLink="/detalheCliente/{{item.id}}">
-            <span class="badge">{{item.id}}</span>{{item.nome}}
-            
-        </a>
-            <button class="delete" title="excluir" (click)="delete(item)">excluir</button>
-        </li>
-        </ul>
-        
+
+<a routerLink="/novoCliente">NOVA ESPÉCIE</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Numero do Catálogo</th>
+            <th>nome científico</th>
+            <th>localidade de coleta</th>
+            <th>numero de exemplares</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let cliente of clientes">
+        <tr>
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.cpf}}</td>
+
+        <td><button class="delete" title="excluir" (click)="delete(cliente)">excluir</button></td>
+    <button class="update" title="atualizar" routerLink="/update/{{cliente.id}}">atualizar</button>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
